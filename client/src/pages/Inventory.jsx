@@ -8,7 +8,7 @@ const InventoryPage = () => {
   const [typeFilter, setTypeFilter] = useState('');
 
   const fetchProducts = async () => {
-    const response = await axios.get("http://localhost:3000/inventory");
+    const response = await axios.get("https://react-ecommerce-x3h8.onrender.com/inventory");
     setProducts(response.data);
   };
 
