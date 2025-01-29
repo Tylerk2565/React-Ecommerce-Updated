@@ -11,7 +11,7 @@ const app = express();
 // Since we have 2 different ports, this is how we connect those ports to fetch our data
 // Cors helps us do that securely
 const corsOptions = {
-  origin: ["https://react-ecommerce-frontend-qi5q.onrender.com"],
+  origin: ["http://localhost:5173"],
 };
 
 app.use(cors(corsOptions));
@@ -52,7 +52,7 @@ app.get("/inventory", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);

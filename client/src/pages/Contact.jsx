@@ -35,15 +35,13 @@ const ContactPage = () => {
       newErrors.contactMessage = "Message is required.";
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
+    return Object.keys(newErrors).length === 0; 
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
     if (validateForm()) {
-      // Simulate form submission (e.g., API call)
       setIsSubmitted(true);
-      // Reset form
       setFormData({
         firstName: "",
         lastName: "",
