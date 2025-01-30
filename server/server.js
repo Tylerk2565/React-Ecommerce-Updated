@@ -12,17 +12,9 @@ dotenv.config();
 
 const app = express();
 
-// Acts as a bridge to connect our frontend and backend
-// Since we have 2 different ports, this is how we connect those ports to fetch our data
-// Cors helps us do that securely
-const corsOptions = {
-  origin: ["https://react-ecommerce-git-main-tylerk2565s-projects.vercel.app"],
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// Creates connection to database
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -39,14 +31,7 @@ connection.connect((err) => {
   }
 });
 
-// Root route to check if the server is running
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "../client/dist/index.html"));
-});
-
-// Selects all from our inventory table in our sql database
-// If it can't, then we return an error
-app.get("/inventory", (req, res) => {
+app.get("/api-inventory", (req, res) => {
   const query = "SELECT * FROM inventory";
   connection.query(query, (err, results) => {
     if (err) {
@@ -56,6 +41,10 @@ app.get("/inventory", (req, res) => {
       res.json(results);
     }
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;

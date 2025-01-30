@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/inventory': {
+      '/api-inventory': {
         target: 'https://react-ecommerce-server-bj4l.onrender.com', 
         changeOrigin: true,
         secure: false,
