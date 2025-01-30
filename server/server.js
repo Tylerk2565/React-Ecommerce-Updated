@@ -2,6 +2,11 @@ import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
 import dotenv from "dotenv";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -15,6 +20,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Creates connection to database
 const connection = mysql.createConnection({
@@ -34,8 +40,8 @@ connection.connect((err) => {
 });
 
 // Root route to check if the server is running
-app.get("/", (req, res) => {
-  res.send("Server is running");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../client/dist/index.html"));
 });
 
 // Selects all from our inventory table in our sql database
