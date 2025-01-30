@@ -9,7 +9,7 @@ const InventoryPage = () => {
 
   
   const fetchProducts = async () => {
-    const response = await axios.get("http://localhost:3000/inventory");
+    const response = await axios.get("https://react-ecommerce-server-bj4l.onrender.com/inventory");
     setProducts(response.data);
   };
 

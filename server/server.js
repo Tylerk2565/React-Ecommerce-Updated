@@ -11,7 +11,7 @@ const app = express();
 // Since we have 2 different ports, this is how we connect those ports to fetch our data
 // Cors helps us do that securely
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: ["https://react-ecommerce-n7ghcpkp9-tylerk2565s-projects.vercel.app"],
 };
 
 app.use(cors(corsOptions));
