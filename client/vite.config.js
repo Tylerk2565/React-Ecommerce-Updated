@@ -5,4 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    proxy: {
+      '/inventory': {
+        target: 'https://react-ecommerce-server-bj4l.onrender.com', 
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
