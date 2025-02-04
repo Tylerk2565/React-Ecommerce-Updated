@@ -1,4 +1,3 @@
-import React from "react";
 import homeVideo from '../assets/homeVideo.mp4';
 import Carousel from "../components/Carousel";
 
