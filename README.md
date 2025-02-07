@@ -6,7 +6,7 @@ Welcome to my fullstack React E-commerce website
 
 You can view the live application at the following link:
 
-[Hosted Site](https://react-ecommerce-server-bj4l.onrender.com/)
+[Hosted Site](https://react-ecommerce-updated.onrender.com/)
 
 ## Features
 
