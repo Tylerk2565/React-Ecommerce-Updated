@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api-inventory': {
-        target: 'http://localhost:3306', 
+        target: 'https://react-ecommerce-updated.onrender.com', 
         changeOrigin: true,
         secure: false,
       },
