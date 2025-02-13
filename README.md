@@ -1,6 +1,6 @@
-# React E-commerce Application
+# Prestige Performance Ecommerce Website
 
-Welcome to my fullstack React E-commerce website
+Welcome to my fullstack React E-commerce website that specializes in exotic car sales, that was built with React, Node.js and Tailwindcss
 
 ## Live Demo
 
